@@ -4,7 +4,7 @@ import greenfoot.*;
  *
  * @author R. Springer
  */
-public class Enemy extends Mover {
+public class Slime extends Mover {
 
     private int walkRange;
     private int xMin;
@@ -12,38 +12,24 @@ public class Enemy extends Mover {
     private boolean firstAct;
     private int speed;
     
-    private GreenfootImage run1 = new GreenfootImage ("flyFly1.png");
-    private GreenfootImage run2 = new GreenfootImage ("flyFly2.png");
+  
     private int frame = 1;
     
-    public Enemy() {
+    public Slime() {
         super();
         getImage().mirrorHorizontally();
-        setImage("flyFly1.png");
-        walkRange = 140;
+        
+        walkRange = 500;
         firstAct = true;
-        speed = 1;
+        speed = 5;
     }
-    public void animate()
-    {
-        if (frame == 1)
-        {
-            setImage (run1);
-        }
-        else if (frame == 2)
-        {
-            setImage (run2);
-            frame = 1;
-            return;
-        }
-        frame ++;
-    }
+
     
     @Override
     public void act() {
         int x = getX();
         int y = getY();
-        animate();
+       
 
         if (firstAct) {
             firstAct = false;
