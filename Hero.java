@@ -1,4 +1,3 @@
-
 import greenfoot.*;
 
 /**
@@ -51,6 +50,7 @@ public class Hero extends Mover {
   
         getWorld().showText(getX() + "," + getY(),100,100);
         handleInput();
+        removeKey();
     
         velocityX *= drag;
         velocityY += acc;
@@ -64,12 +64,26 @@ public class Hero extends Mover {
                 getWorld().removeObject(this);
                 break;
             }
-            
         }
     }
+    
+    public void removeKey()
+    {
+    if (isTouching(BlueKey.class)) {
+        removeTouching(BlueKey.class); 
+    }
+    
+    if (isTouching(RedKey.class)) {
+        removeTouching(RedKey.class); 
+    }
+    
+    if (isTouching(Star.class)) {
+        removeTouching(Star.class); 
+    }
+   }
 
     public void handleInput() {
-        if (Greenfoot.isKeyDown("w") && velocityY == 0) {
+        if (Greenfoot.isKeyDown("w")) {
             velocityY = -10;
         }
 
@@ -130,7 +144,6 @@ public class Hero extends Mover {
             frame = 1;
             return;
         }
-        
         frame ++;
     }
     
@@ -182,7 +195,6 @@ public class Hero extends Mover {
             frame2 = 1;
             return;
         }
-        
         frame2 ++;
     }
 
