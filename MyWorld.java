@@ -73,6 +73,6 @@ public class MyWorld extends World {
     public void prepare()
     {
         PlayAgain1 playAgain1 = new PlayAgain1();
-        addObject (playAgain1, 463, 629);
+        addObject (playAgain1, 40, 40);
     }
 }
