@@ -46,7 +46,6 @@ public class Hero extends Mover {
     
     @Override
     public void act() {
-  
         getWorld().showText(getX() + "," + getY(),100,100);
         handleInput();
         removeKey();
