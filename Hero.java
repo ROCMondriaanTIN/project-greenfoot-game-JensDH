@@ -48,7 +48,7 @@ public class Hero extends Mover {
     public void act() {
         getWorld().showText(getX() + "," + getY(),100,100);
         handleInput();
-        removeKey();
+        removeItems();
     
         velocityX *= drag;
         velocityY += acc;
@@ -73,7 +73,8 @@ public class Hero extends Mover {
         }
     }
     
-    public void removeKey()
+    
+    public void removeItems()
     {
     if (isTouching(BlueKey.class)) {
         removeTouching(BlueKey.class); 
@@ -86,7 +87,7 @@ public class Hero extends Mover {
     if (isTouching(Star.class)) {
         removeTouching(Star.class); 
     }
-   }
+}
 
     public void handleInput() {
         if (Greenfoot.isKeyDown("w")) {
