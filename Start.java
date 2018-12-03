@@ -18,8 +18,13 @@ public class Start extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1); 
         this.setBackground("bg.png");
-        
+        prepare();
+    }
+    private void prepare()
+    {
         Play play = new Play();
-        addObject(play, 500, 400);
+        addObject(play, 500, 300);
+        SelectButton sb = new SelectButton();
+        addObject(sb, 500, 500);
     }
 }

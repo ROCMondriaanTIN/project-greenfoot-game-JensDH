@@ -55,14 +55,12 @@ public class MyWorld extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 144, 672);
         addObject(hero, 144, 672);
-        
-<<<<<<< HEAD
+
         addObject(new Enemy(), 2492, 824);
-=======
+
         // Force act zodat de camera op de juist plek staat.
         camera.act();
         hero.act();
->>>>>>> 4372fff5ea53a9c16ee13c8083969eac7aeee2f9
 
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.

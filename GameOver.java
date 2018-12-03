@@ -17,14 +17,15 @@ public class GameOver extends World
     {    
         super(1000, 800, 1, false);
         this.setBackground("bg.png");
-        
         prepare();
     }
     private void prepare()
     {
         PlayAgain playAgain = new PlayAgain();
-        addObject (playAgain, 500, 500);
+        addObject (playAgain, 350, 500);
         GameOver1 gameOver1= new GameOver1();
         addObject (gameOver1, 500, 300);
+        SelectButton sb = new SelectButton(); 
+        addObject (sb, 650,500);
     }
 }
