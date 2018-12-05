@@ -57,6 +57,7 @@ public class MyWorld extends World {
         addObject(hero, 144, 672);
 
         addObject(new Enemy(), 2492, 824);
+        addObject(new HeroCoin1(), 695, 665); 
 
         // Force act zodat de camera op de juist plek staat.
         camera.act();
@@ -67,12 +68,13 @@ public class MyWorld extends World {
         ce = new CollisionEngine(te, camera);
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
+        
+        prepare();
     }
 
     @Override
     public void act() {
         ce.update();
-        prepare();
     }
     public void prepare()
     {

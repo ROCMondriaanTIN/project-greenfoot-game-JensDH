@@ -36,6 +36,10 @@ public class Hero extends Mover {
     
     private int frame = 1;
     private int frame2 = 1;
+    
+    int HeroCoin1 = 0;
+    int HeroCoin2 = 0;
+    int waardeCoin = 1;
 
     public Hero() {
         super();
@@ -87,6 +91,10 @@ public class Hero extends Mover {
     if (isTouching(Star.class)) {
         removeTouching(Star.class); 
     }
+        if (isTouching(HeroCoin1.class)) {
+        waardeCoin = 2;
+        removeTouching(HeroCoin1.class); 
+    }
 }
 
     public void handleInput() {
@@ -103,108 +111,103 @@ public class Hero extends Mover {
         }
     }
     
-      public void animateRight()
+    public void animateRight()
     {
-        if (frame == 1)
+        if(frame == 1)
         {
-            setImage (run1);
+        setImage("p"+waardeCoin+"_walk01.png");
         }
-        else if (frame == 2)
+        else if(frame == 2)
         {
-            setImage (run2);
+        setImage("p"+waardeCoin+"_walk02.png");
         }
-        else if (frame == 3)
+       else if(frame == 3)
         {
-            setImage (run3);
+        setImage("p"+waardeCoin+"_walk03.png");
         }
-        else if (frame == 4)
+        else if(frame == 4)
         {
-            setImage (run4);
+        setImage("p"+waardeCoin+"_walk04.png");
         }
-        else if (frame == 5)
+        else if(frame == 5)
         {
-            setImage (run5);
+        setImage("p"+waardeCoin+"_walk05.png");
         }
-        else if (frame == 6)
+        else if(frame == 6)
         {
-            setImage (run6);
+        setImage("p"+waardeCoin+"_walk06.png");
         }
-        else if (frame == 7)
+       else if(frame == 7)
         {
-            setImage (run7);
+        setImage("p"+waardeCoin+"_walk07.png");
         }
-        else if (frame == 8)
+        else if(frame == 8)
         {
-            setImage (run8);
+        setImage("p"+waardeCoin+"_walk08.png");
         }
-        else if (frame == 9)
+        else if(frame == 9)
         {
-            setImage (run9);
+        setImage("p"+waardeCoin+"_walk09.png");
+    {
+       
+        frame = 1;
+        return;
         }
-        else if (frame == 10)
-        {
-            setImage (run10);
-        }
-        else if (frame == 11)
-        {
-            setImage (run11);
-            frame = 1;
-            return;
+
+      
         }
         frame ++;
     }
     
-     public void animateLeft()
+    public void animateLeft()
     {
-        if (frame2 == 1)
+            if(frame == 1)
         {
-            setImage (run12);
+        setImage("p"+waardeCoin+"_walk01mirrored.png");
         }
-        else if (frame2 == 2)
+        else if(frame == 2)
         {
-            setImage (run13);
+        setImage("p"+waardeCoin+"_walk02mirrored.png");
         }
-        else if (frame2 == 3)
+       else if(frame == 3)
         {
-            setImage (run14);
+        setImage("p"+waardeCoin+"_walk03mirrored.png");
         }
-        else if (frame2 == 4)
+        else if(frame == 4)
         {
-            setImage (run15);
+        setImage("p"+waardeCoin+"_walk04mirrored.png");
         }
-        else if (frame2 == 5)
+        else if(frame == 5)
         {
-            setImage (run16);
+        setImage("p"+waardeCoin+"_walk05mirrored.png");
         }
-        else if (frame2 == 6)
+        else if(frame == 6)
         {
-            setImage (run17);
+        setImage("p"+waardeCoin+"_walk06mirrored.png");
         }
-        else if (frame2 == 7)
+       else if(frame == 7)
         {
-            setImage (run18);
+        setImage("p"+waardeCoin+"_walk07mirrored.png");
         }
-        else if (frame2 == 8)
+        else if(frame == 8)
         {
-            setImage (run19);
+        setImage("p"+waardeCoin+"_walk08mirrored.png");
         }
-        else if (frame2 == 9)
+        else if(frame == 9)
         {
-            setImage (run20);
+        setImage("p"+waardeCoin+"_walk09mirrored.png");
         }
-        else if (frame2 == 10)
+        setImage("p"+waardeCoin+"_walk10mirrored.png");
+        { 
+        setImage("p"+waardeCoin+"_walk11mirrored.png" );
         {
-            setImage (run21);
+        
+     
+        frame = 1;
+        return;
         }
-        else if (frame2 == 11)
-        {
-            setImage (run22);
-            frame2 = 1;
-            return;
+        frame ++;
         }
-        frame2 ++;
-    }
-
     public int getWidth() {
         return getImage().getWidth();
     }
