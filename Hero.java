@@ -1,3 +1,4 @@
+
 import greenfoot.*;
 
 /**
@@ -13,8 +14,6 @@ public class Hero extends Mover {
     private int frame = 1;
     private int frame2 = 1;
     
-    //int HeroCoin1 = 0;
-    //int HeroCoin2 = 0;
     int waardeCoin = 1;
 
     public Hero() {
@@ -68,6 +67,10 @@ public class Hero extends Mover {
     if (isTouching(HeroCoin1.class)) {
         waardeCoin = 2;
         removeTouching(HeroCoin1.class); 
+    }
+    if (isTouching(HeroCoin2.class)) {
+        waardeCoin = 3;
+        removeTouching(HeroCoin2.class); 
     }
 }
 
@@ -127,7 +130,7 @@ public class Hero extends Mover {
         {
          setImage("p"+waardeCoin+"_walk10.png");
         }
-        else if(frame == 11)
+        if(frame == 11)
         {
          setImage("p"+waardeCoin+"_walk11.png");
         

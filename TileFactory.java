@@ -183,6 +183,12 @@ public class TileFactory {
                 case 68:
                 tile = new Tile("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
+                case 181:
+                tile = new HeroCoin1("hud_p2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                break;
+                case 182:
+                tile = new HeroCoin2("hud_p3.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                break;
                 
                 default:
                 tile = new Tile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

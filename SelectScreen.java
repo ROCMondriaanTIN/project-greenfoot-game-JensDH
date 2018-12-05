@@ -20,12 +20,10 @@ public class SelectScreen extends World
         SelectLevel sl = new SelectLevel();
         addObject (sl, 500, 100);
         Level1Button lb1 = new Level1Button();
-        addObject(lb1, 200, 400);
+        addObject(lb1, 250, 400);
         Level2Button lb2 = new Level2Button();
-        addObject(lb2, 400, 400);
+        addObject(lb2, 500, 400);
         Level3Button lb3 = new Level3Button();
-        addObject (lb3, 600, 400);
-        Level4Button lb4 = new Level4Button();
-        addObject (lb4, 800, 400);
+        addObject (lb3, 750, 400);
     }
 }

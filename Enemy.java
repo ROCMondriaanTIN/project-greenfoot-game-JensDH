@@ -15,7 +15,6 @@ public class Enemy extends Mover {
     public Enemy() {
         super();
         getImage().mirrorHorizontally();
-        setImage("flyFly1.png");
         walkRange = 140;
         firstAct = true;
         speed = 1;
