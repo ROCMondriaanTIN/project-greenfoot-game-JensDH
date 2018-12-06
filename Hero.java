@@ -55,9 +55,6 @@ public class Hero extends Mover {
     
     public void removeItems()
     {
-    if (isTouching(BlueKey.class)) {
-        removeTouching(BlueKey.class); 
-    }
     if (isTouching(RedKey.class)) {
         removeTouching(RedKey.class); 
     }
@@ -75,16 +72,29 @@ public class Hero extends Mover {
 }
 
     public void handleInput() {
-        if (Greenfoot.isKeyDown("w")) {
-            velocityY = -20;
+        if (Greenfoot.isKeyDown("w"))
+        {
+            velocityY = -15;
         }
-
-        if (Greenfoot.isKeyDown("a")) {
-            velocityX = -2;
+        if (Greenfoot.isKeyDown("a")|| Greenfoot.isKeyDown("left"))
+        {
+            velocityX = -10;
             animateLeft();
-        } else if (Greenfoot.isKeyDown("d")) {
-            velocityX = 2;
+        }
+        if (Greenfoot.isKeyDown("d")|| Greenfoot.isKeyDown("right"))
+        {
+            velocityX = 10;
             animateRight();
+        }
+        if(Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("a")
+        || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("left"))
+        {
+            velocityX -= 3;
+        }
+        if(Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("d")
+        || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("right"))
+        {
+            velocityX += 3;
         }
     }
     

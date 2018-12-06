@@ -160,7 +160,7 @@ public class TileFactory {
                 tile.isSolid = true;
                 break;
                 case 170:
-                tile = new BlueKey("keyBlue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new Tile("keyBlue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
                 case 77:
                 tile = new Tile("grassCliffLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
@@ -186,9 +186,30 @@ public class TileFactory {
                 case 181:
                 tile = new HeroCoin1("hud_p2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
-                case 182:
+                case 141:
                 tile = new HeroCoin2("hud_p3.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
+                case 158:
+                tile = new Tile("stoneCenter.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile.isSolid = true;
+                case 96:
+                tile = new Tile("rockHillLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile.isSolid = true;
+                case 136:
+                tile = new Tile("stoneHillLeft2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile.isSolid = true;
+                case 97:
+                tile = new Tile("rockHillRight.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile.isSolid = true;
+                case 137:
+                tile = new Tile("stoneHillRght2.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile.isSolid = true;
+                case 132:
+                tile = new Tile("stoneHalf.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile.isSolid = true;
+                case 131:
+                tile = new Tile("stoneCliffRightAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile.isSolid = true;
                 
                 default:
                 tile = new Tile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
