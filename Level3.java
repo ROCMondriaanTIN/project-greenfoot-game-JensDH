@@ -15,7 +15,7 @@ public class Level3 extends World {
     public Level3() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
-        this.setBackground("bg.png");
+        this.setBackground("space2.png");
         
         int[][] map = {
 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -53,11 +53,12 @@ public class Level3 extends World {
         camera.follow(hero);
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
-        addObject(camera, 144, 672);
-        addObject(hero, 144, 672);
+        addObject(camera, 88, 612);
+        addObject(hero, 88, 612);
 
         addObject(new Enemy(), 2492, 824); 
-        addObject (new Door1(), 120, 670);
+        addObject(new Door3(), 5908, 445);
+        addObject(new DoorTop(), 5908, 390); 
 
         // Force act zodat de camera op de juist plek staat.
         camera.act();
@@ -78,7 +79,9 @@ public class Level3 extends World {
     }
     public void prepare()
     {
-        PlayAgain1 playAgain1 = new PlayAgain1();
-        addObject (playAgain1, 40, 40);
+        PlayAgainTopLeft1 patl1 = new PlayAgainTopLeft1();
+        addObject(patl1, 100, 40);
+        HomeButton hb = new HomeButton();
+        addObject(hb, 40, 40);
     }
 }

@@ -16,13 +16,13 @@ public class GameOver extends World
     public GameOver()
     {    
         super(1000, 800, 1, false);
-        this.setBackground("bg.png");
+        this.setBackground("space3.png");
         prepare();
     }
     private void prepare()
     {
-        PlayAgain playAgain = new PlayAgain();
-        addObject (playAgain, 350, 500);
+        PlayAgain1 playAgain1 = new PlayAgain1();
+        addObject (playAgain1, 350, 500);
         GameOver1 gameOver1= new GameOver1();
         addObject (gameOver1, 500, 300);
         SelectButton sb = new SelectButton(); 

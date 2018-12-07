@@ -15,6 +15,9 @@ public class Hero extends Mover {
     private int frame2 = 1;
     
     int waardeCoin = 1;
+    
+    private boolean RedKey = false;
+    ScorenBord sb;
 
     public Hero() {
         super();
@@ -28,6 +31,7 @@ public class Hero extends Mover {
         getWorld().showText(getX() + "," + getY(),100,100);
         handleInput();
         removeItems();
+        RedKey();
     
         velocityX *= drag;
         velocityY += acc;
@@ -55,12 +59,6 @@ public class Hero extends Mover {
     
     public void removeItems()
     {
-    if (isTouching(RedKey.class)) {
-        removeTouching(RedKey.class); 
-    }
-    if (isTouching(Star.class)) {
-        removeTouching(Star.class); 
-    }
     if (isTouching(HeroCoin1.class)) {
         waardeCoin = 2;
         removeTouching(HeroCoin1.class); 
@@ -70,6 +68,16 @@ public class Hero extends Mover {
         removeTouching(HeroCoin2.class); 
     }
 }
+
+    public void RedKey()
+    {
+        if(isTouching(RedKey.class))
+        {
+            RedKey = true;
+            removeTouching(RedKey.class);
+            sb.RedKeyHud();
+        }
+    }
 
     public void handleInput() {
         if (Greenfoot.isKeyDown("w"))

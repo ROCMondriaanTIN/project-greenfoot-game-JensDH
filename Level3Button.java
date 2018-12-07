@@ -14,6 +14,7 @@ public class Level3Button extends Mover
      */
     public void act() 
     {
-        // Add your action code here.
+        if (Greenfoot.mouseClicked(this))
+        Greenfoot.setWorld(new Level3());
     }    
 }
