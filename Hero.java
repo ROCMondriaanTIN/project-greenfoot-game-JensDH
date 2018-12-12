@@ -1,4 +1,3 @@
-
 import greenfoot.*;
 
 /**
@@ -14,6 +13,7 @@ public class Hero extends Mover {
     private int frame = 1;
     private int frame2 = 1;
     
+
     int waardeCoin = 1;
 
     public Hero() {
@@ -30,10 +30,12 @@ public class Hero extends Mover {
     
       velocityX *= drag;
       velocityY += acc;
-        if (velocityY > gravity) {
-            velocityY = gravity;
+      if (velocityY > gravity) {
+          velocityY = gravity;
         }
       applyVelocity();
+      
+      
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
@@ -64,12 +66,11 @@ public class Hero extends Mover {
             }
         }
     }
-    
-    
+
     
     public void removeItems()
     {
-    if (isTouching(HeroCoin1.class)) {
+     if (isTouching(HeroCoin1.class)) {
         waardeCoin = 2;
         removeTouching(HeroCoin1.class); 
     }
@@ -80,25 +81,30 @@ public class Hero extends Mover {
     if (isTouching(RedKey.class)) {
         removeTouching(RedKey.class);
     }
-  } 
+   } 
+   
+    private boolean ground() {
+        Actor ground = getOneObjectAtOffset (0,getImage().getHeight() / 2, Tile.class);
+        return ground != null;
+    }
 
     public void handleInput() {
-        if (Greenfoot.isKeyDown("w"))
+        if (Greenfoot.isKeyDown("w") && ground() == true)
         {
             velocityY = -15;
         }
         if (Greenfoot.isKeyDown("a")|| Greenfoot.isKeyDown("left"))
         {
-            velocityX = -10;
+            velocityX = -7;
             animateLeft();
         }
         if (Greenfoot.isKeyDown("d")|| Greenfoot.isKeyDown("right"))
         {
-            velocityX = 10;
+            velocityX = 7;
             animateRight();
         }
     }
-    
+
     public void animateRight()
     {
         if(frame == 1)
