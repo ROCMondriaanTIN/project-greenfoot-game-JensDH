@@ -15,9 +15,6 @@ public class Hero extends Mover {
     private int frame2 = 1;
     
     int waardeCoin = 1;
-    
-    private boolean RedKey = false;
-    ScorenBord sb;
 
     public Hero() {
         super();
@@ -28,19 +25,31 @@ public class Hero extends Mover {
     
     @Override
     public void act() {
-        getWorld().showText(getX() + "," + getY(),100,100);
-        handleInput();
-        removeItems();
-        RedKey();
+      handleInput();
+      removeItems();
     
-        velocityX *= drag;
-        velocityY += acc;
+      velocityX *= drag;
+      velocityY += acc;
         if (velocityY > gravity) {
             velocityY = gravity;
         }
-        applyVelocity();
+      applyVelocity();
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
+            if (enemy != null) {
+                getWorld().removeObject(enemy);
+                Greenfoot.setWorld(new GameOver());
+                break;
+            }
+        }
+        for (Actor enemy : getIntersectingObjects(VliegendeEnemy.class)) {
+            if (enemy != null) {
+                getWorld().removeObject(enemy);
+                Greenfoot.setWorld(new GameOver());
+                break;
+            }
+        }
+        for (Actor enemy : getIntersectingObjects(FireBall.class)) {
             if (enemy != null) {
                 getWorld().removeObject(enemy);
                 Greenfoot.setWorld(new GameOver());
@@ -57,6 +66,7 @@ public class Hero extends Mover {
     }
     
     
+    
     public void removeItems()
     {
     if (isTouching(HeroCoin1.class)) {
@@ -67,17 +77,10 @@ public class Hero extends Mover {
         waardeCoin = 3;
         removeTouching(HeroCoin2.class); 
     }
-}
-
-    public void RedKey()
-    {
-        if(isTouching(RedKey.class))
-        {
-            RedKey = true;
-            removeTouching(RedKey.class);
-            sb.RedKeyHud();
-        }
+    if (isTouching(RedKey.class)) {
+        removeTouching(RedKey.class);
     }
+  } 
 
     public void handleInput() {
         if (Greenfoot.isKeyDown("w"))
@@ -93,16 +96,6 @@ public class Hero extends Mover {
         {
             velocityX = 10;
             animateRight();
-        }
-        if(Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("a")
-        || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("left"))
-        {
-            velocityX -= 3;
-        }
-        if(Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("d")
-        || Greenfoot.isKeyDown("shift") && Greenfoot.isKeyDown("right"))
-        {
-            velocityX += 3;
         }
     }
     

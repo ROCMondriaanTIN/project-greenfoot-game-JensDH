@@ -24,6 +24,8 @@ public class SelectScreen extends World
         Level2Button lb2 = new Level2Button();
         addObject(lb2, 500, 400);
         Level3Button lb3 = new Level3Button();
-        addObject (lb3, 750, 400);
+        addObject(lb3, 750, 400);
+        HomeButton hb = new HomeButton();
+        addObject(hb, 40, 40);
     }
 }

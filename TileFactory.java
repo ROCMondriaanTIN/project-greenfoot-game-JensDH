@@ -71,7 +71,7 @@ public class TileFactory {
                 tile = new Tile("signLeft.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
                 case 168:
-                tile = new Tile("keyRed.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile = new RedKey("keyRed.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
                 case 75:
                 tile = new Tile("grassCliffLeftAlt.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

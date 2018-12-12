@@ -22,10 +22,12 @@ public class GameOver extends World
     private void prepare()
     {
         PlayAgain1 playAgain1 = new PlayAgain1();
-        addObject (playAgain1, 350, 500);
+        addObject(playAgain1, 350, 500);
         GameOver1 gameOver1= new GameOver1();
-        addObject (gameOver1, 500, 300);
+        addObject(gameOver1, 500, 300);
         SelectButton sb = new SelectButton(); 
-        addObject (sb, 650,500);
+        addObject(sb, 650,500);
+        HomeButton hb = new HomeButton();
+        addObject(hb, 40, 40);
     }
 }

@@ -56,9 +56,13 @@ public class Level3 extends World {
         addObject(camera, 88, 612);
         addObject(hero, 88, 612);
 
-        addObject(new Enemy(), 2492, 824); 
+        addObject(new Enemy(), 2843, 707); 
+        addObject(new VliegendeEnemy(),620, 382);
+        addObject(new VliegendeEnemy(), 3940, 280);
         addObject(new Door3(), 5908, 445);
         addObject(new DoorTop(), 5908, 390); 
+        addObject(new FireBall(), 2100, 350);
+        addObject(new FireBall(), 5640, 520);
 
         // Force act zodat de camera op de juist plek staat.
         camera.act();

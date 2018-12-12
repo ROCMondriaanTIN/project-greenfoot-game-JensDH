@@ -23,8 +23,10 @@ public class Start extends World
     private void prepare()
     {
         Play play = new Play();
-        addObject(play, 500, 300);
+        addObject(play, 500, 200);
         SelectButton sb = new SelectButton();
-        addObject(sb, 500, 500);
+        addObject(sb, 500, 400);
+        ConrtolsButton cb = new ConrtolsButton();
+        addObject(cb, 500, 600);
     }
 }
