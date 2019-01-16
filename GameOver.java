@@ -8,11 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameOver extends World
 {
-
-    /**
-     * Constructor for objects of class GameOver.
-     * 
-     */
     public GameOver()
     {    
         super(1000, 800, 1, false);
@@ -31,3 +26,4 @@ public class GameOver extends World
         addObject(hb, 40, 40);
     }
 }
+

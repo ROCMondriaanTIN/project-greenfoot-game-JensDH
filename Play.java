@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Button here.
+ * Write a description of class Level1Button here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -9,14 +9,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Play extends Mover
 {
     /**
-     * Act - do whatever the Button wants to do. This method is called whenever
+     * Act - do whatever the Level1Button wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        if (Greenfoot.mouseClicked(this)){ 
-        
-        Greenfoot.setWorld (new MyWorld());
-    }    
+        if (Greenfoot.mouseClicked(this))
+        Greenfoot.setWorld(new MyWorld());
     }    
 }
+

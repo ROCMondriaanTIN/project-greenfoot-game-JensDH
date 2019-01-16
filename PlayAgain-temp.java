@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class PlayAgainTopLeft1 extends Mover
+public class PlayAgain extends Mover
 {
     /**
      * Act - do whatever the PlayAgain wants to do. This method is called whenever
@@ -14,8 +14,6 @@ public class PlayAgainTopLeft1 extends Mover
      */
     public void act() 
     {
-        if (Greenfoot.mouseClicked(this)){ 
-        Greenfoot.setWorld (new MyWorld());
+        // Add your action code here.
     }    
-    }
 }

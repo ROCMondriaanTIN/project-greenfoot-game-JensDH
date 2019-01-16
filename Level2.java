@@ -85,9 +85,9 @@ public class Level2 extends World {
     }
     public void prepare()
     {
-        PlayAgainTopLeft1 patl1 = new PlayAgainTopLeft1();
-        addObject(patl1, 100, 40);
-        HomeButton hb = new HomeButton();
-        addObject(hb, 40, 40);
+     PlayAgainTopLeft2 patl2 = new PlayAgainTopLeft2();
+     addObject(patl2, 100, 40);
+     HomeButton hb = new HomeButton();
+     addObject(hb, 40, 40);
     }
 }

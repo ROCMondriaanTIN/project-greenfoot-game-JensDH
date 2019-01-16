@@ -83,9 +83,9 @@ public class MyWorld extends World {
     }
     public void prepare()
     {
-        PlayAgainTopLeft1 patl1 = new PlayAgainTopLeft1();
-        addObject(patl1, 100, 40);
-        HomeButton hb = new HomeButton();
-        addObject(hb, 40, 40);
+     PlayAgainTopLeft1 patl1 = new PlayAgainTopLeft1();
+     addObject(patl1, 100, 40);
+     HomeButton hb = new HomeButton();
+     addObject(hb, 40, 40);
     }
 }

@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class PlayAgainTopLeft3 here.
+ * Write a description of class PlayAgain here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -9,13 +9,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PlayAgainTopLeft3 extends Mover
 {
     /**
-     * Act - do whatever the PlayAgainTopLeft3 wants to do. This method is called whenever
+     * Act - do whatever the PlayAgain wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
         if (Greenfoot.mouseClicked(this)){ 
         Greenfoot.setWorld (new Level3());
-    } 
     }    
+    }
 }

@@ -9,12 +9,12 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
-    
     private int frame = 1;
     private int frame2 = 1;
-    
-
     int waardeCoin = 1;
+    private int springY;
+    private int walkL = -10;
+    private int walkR = 10;
 
     public Hero() {
         super();
@@ -34,8 +34,6 @@ public class Hero extends Mover {
           velocityY = gravity;
         }
       applyVelocity();
-      
-      
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
@@ -70,7 +68,7 @@ public class Hero extends Mover {
     
     public void removeItems()
     {
-     if (isTouching(HeroCoin1.class)) {
+    if (isTouching(HeroCoin1.class)) {
         waardeCoin = 2;
         removeTouching(HeroCoin1.class); 
     }
@@ -84,23 +82,41 @@ public class Hero extends Mover {
    } 
    
     private boolean ground() {
-        Actor ground = getOneObjectAtOffset (0,getImage().getHeight() / 2, Tile.class);
-        return ground != null;
+    Actor ground = getOneObjectAtOffset (0,getImage().getHeight() / 2, Tile.class);
+    return ground != null;
     }
 
     public void handleInput() {
-        if (Greenfoot.isKeyDown("w") && ground() == true)
+        if(waardeCoin == 1)
         {
-            velocityY = -15;
+            springY = -15;
+            walkL = -7;
+            walkR = 7;
+        }
+        else if(waardeCoin == 2)
+        {
+            springY = -20;
+            walkL = -7;
+            walkR = 7;
+        }
+        else if(waardeCoin == 3)
+        {
+            springY= -20;
+            walkL = -7;
+            walkR = 7;
+        }
+        if (Greenfoot.isKeyDown("w")&& ground() == true)
+        {
+            velocityY = springY;
         }
         if (Greenfoot.isKeyDown("a")|| Greenfoot.isKeyDown("left"))
         {
-            velocityX = -7;
+            velocityX = walkL;
             animateLeft();
         }
         if (Greenfoot.isKeyDown("d")|| Greenfoot.isKeyDown("right"))
         {
-            velocityX = 7;
+            velocityX = walkR;
             animateRight();
         }
     }
