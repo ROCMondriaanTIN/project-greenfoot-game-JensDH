@@ -15,6 +15,7 @@ public class Hero extends Mover {
     private int springY;
     private int walkL = -10;
     private int walkR = 10;
+    private int sterren = 0;
 
     public Hero() {
         super();
@@ -52,18 +53,36 @@ public class Hero extends Mover {
         for (Actor enemy : getIntersectingObjects(FireBall.class)) {
             if (enemy != null) {
                 getWorld().removeObject(enemy);
-                Greenfoot.setWorld(new GameOver());
+                 Greenfoot.setWorld(new GameOver());
                 break;
             }
         }
         for (Actor enemy : getIntersectingObjects(Death.class)) {
             if (enemy != null) {
-                getWorld().removeObject(this);
+                getWorld().removeObject(enemy);
                 Greenfoot.setWorld(new GameOver());
                 break;
             }
         }
-    }
+        for (Actor Door1 : getIntersectingObjects(Door1.class)) {
+            if (Door1 != null && sterren >= 3) {
+                Greenfoot.setWorld(new Level2());
+                break;
+            }
+        }
+        for (Actor Door2 : getIntersectingObjects(Door2.class)) {
+            if (Door2 != null && sterren >= 3) {
+                Greenfoot.setWorld(new Level3());
+                break;
+            }
+        }
+        for (Actor Door3 : getIntersectingObjects(Door3.class)) {
+            if (Door3 != null && sterren >= 3) {
+                Greenfoot.setWorld(new Start());
+                break;
+            }
+        }
+ }
 
     
     public void removeItems()
@@ -79,42 +98,50 @@ public class Hero extends Mover {
     if (isTouching(RedKey.class)) {
         removeTouching(RedKey.class);
     }
-   } 
+    if (isTouching(Ster.class)) {
+        sterren ++;
+        removeTouching(Ster.class);
+     } 
+     if (isTouching(Diamond.class)) {
+         removeTouching(Diamond.class);
+         Greenfoot.setWorld(new Level3());
+    }
+}
    
     private boolean ground() {
-    Actor ground = getOneObjectAtOffset (0,getImage().getHeight() / 2, Tile.class);
-    return ground != null;
+      Actor ground = getOneObjectAtOffset (0,getImage().getHeight() / 2, Tile.class);
+     return ground != null;
     }
 
     public void handleInput() {
-        if(waardeCoin == 1)
+         if(waardeCoin == 1)
         {
-            springY = -15;
+            springY = -18;
             walkL = -7;
             walkR = 7;
         }
         else if(waardeCoin == 2)
         {
-            springY = -20;
+            springY = -16;
             walkL = -7;
             walkR = 7;
         }
         else if(waardeCoin == 3)
         {
-            springY= -20;
+            springY= -14;
             walkL = -7;
             walkR = 7;
         }
         if (Greenfoot.isKeyDown("w")&& ground() == true)
-        {
+         {
             velocityY = springY;
         }
-        if (Greenfoot.isKeyDown("a")|| Greenfoot.isKeyDown("left"))
+        if (Greenfoot.isKeyDown("a")||Greenfoot.isKeyDown("left"))
         {
             velocityX = walkL;
             animateLeft();
         }
-        if (Greenfoot.isKeyDown("d")|| Greenfoot.isKeyDown("right"))
+        if (Greenfoot.isKeyDown("d")||Greenfoot.isKeyDown("right"))
         {
             velocityX = walkR;
             animateRight();

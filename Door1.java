@@ -14,10 +14,6 @@ public class Door1 extends Mover
      */
     public void act() 
     {
-    if(getOneIntersectingObject(Hero.class)!= null && getWorld().getObjects(RedKey.class).isEmpty())
-    {
-     Greenfoot.setWorld(new Level2());
-    }
-     applyVelocity();
+      applyVelocity();
     }       
 }

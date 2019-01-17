@@ -1,19 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Door1 here.
+ * Write a description of class Diamond here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Door3 extends Mover
+public class Diamond extends Mover
 {
     /**
-     * Act - do whatever the Door1 wants to do. This method is called whenever
+     * Act - do whatever the Diamond wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-      applyVelocity();
-    }       
+        applyVelocity();
+    }    
 }
